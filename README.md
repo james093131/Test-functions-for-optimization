@@ -17,13 +17,13 @@ This file provide several Optimization Test Problems written in C.
 
 
 In order to call the 'TestingFunction.h' function in C++ , first you need to import it 
-```
+```cpp
 #include "TestingFunction.h"
 ```
 
 The following lines is just creating the arguments necessary to demonstrate how to call the function.
 
-```
+```cpp
 # x : Solutions
 x = [0,0,0,0,0,0,0,0,0,0]
 # f : Fitness Value
@@ -37,7 +37,7 @@ func_num = 1
 ```
 
 Call Function 
-```
+```cpp
 Testing_Function(x, f, DIM, N, func_num)
 ```
 
