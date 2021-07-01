@@ -14,7 +14,7 @@ This file provide several Optimization Test Problems written in C.
 10. Schwefel (-500~500)
 11. Sum Squares (-10~10)
 12. Powell (-4~5)
-
+13. Trid (-200~200)
 
 In order to call the 'TestingFunction.h' function in C++ , first you need to import it 
 ```cpp

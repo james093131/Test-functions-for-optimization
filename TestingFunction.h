@@ -16,7 +16,7 @@ void Griewank_OBJECTIVE_VALUE(double *x,double *f,int DIM);//Griewank -600~600
 void Schwefel_OBJECTIVE_VALUE(double *x,double *f,int DIM);//Schwefel -500~500
 void SUM_SQUARES_OBJECTIVE_VALUE(double *x,double *f,int DIM);//Sum Squares -10~10
 void POWELL_OBJECTIVE_VALUE(double *x,double *f,int DIM);//Powell -4~5
-
+void Trid_OBJECTIVE_VALUE(double *x,double *f,int DIM);//Trid -200~200
    
 void Testing_Function(double *x, double *f, int DIM, int N,int func_num)
 {
@@ -59,6 +59,9 @@ void Testing_Function(double *x, double *f, int DIM, int N,int func_num)
                 break;
             case 12:
                 POWELL_OBJECTIVE_VALUE(&x[i*DIM],&f[i],DIM);
+                break;
+            case 13:
+                Trid_OBJECTIVE_VALUE(&x[i*DIM],&f[i],DIM);
                 break;
         }
     
@@ -104,7 +107,6 @@ void ROSENBROCK_OBJECTIVE_VALUE(double *x,double *f,int DIM)
     {
         sum1 += pow (x[i] - pow(x[i-1],2),2) ;
         sum2 += pow(x[i]-1 ,2);
-    // cout<<"S "<<sum1<<' '<<sum2<<endl;
 
     }
 
@@ -207,19 +209,7 @@ void Griewank_OBJECTIVE_VALUE(double *x,double *f,int DIM)
     f[0] = 1 + sum1/4000 - sum2 ;
 }
 
-// double SchafferN2_OBJECTIVE_VALUE(double *x,double *f,int DIM)
-// {
-//     double sum1 = 0;
-//     double sum2 = 0;
-//     for(int i=0;i<DIM;i++)
-//     {
-//         sum1 += pow(arr[i],2);
-//         sum2 += pow(arr[i],2);
 
-//     }
-//     double F = 0.5+ sin(pow(sum1,2));
-//     return F;
-// }
 void Schwefel_OBJECTIVE_VALUE(double *x,double *f,int DIM)
 {
     f[0] = 0.0;
@@ -235,19 +225,7 @@ void Schwefel_OBJECTIVE_VALUE(double *x,double *f,int DIM)
 
     f[0] =  418.9829*DIM - sum1;
 }
-    //  double BOHACHEVSKY_OBJECTIVE_VALUE(double *x,double *f,int DIM)
-// {
-//只有2D函式還沒寫好
-//     double sum1 = 0;
-//     double sum2 = 0;
-//     for(int i=0;i<DIM;i++)
-//     {
-//         sum1 += arr[i]*sin( sqrt(arr[i]) ) ;
 
-//     }
-//     double F =  418.9829*DIM - sum1;
-//     return F;
-// }
 void SUM_SQUARES_OBJECTIVE_VALUE(double *x,double *f,int DIM)
 {
     f[0] = 0.0;
@@ -261,18 +239,6 @@ void SUM_SQUARES_OBJECTIVE_VALUE(double *x,double *f,int DIM)
     f[0] = sum1;
 }
 
-// double Booth_OBJECTIVE_VALUE(double *x,double *f,int DIM)
-// {
-//只有2D函式還沒寫好
-//     double sum1 = 0;
-//     for(int i=0;i<DIM;i++)
-//     {
-//         sum1 += i*pow(arr[i],2);
-
-//     }
-//     double F = sum1;
-//     return F;
-// }
 void POWELL_OBJECTIVE_VALUE(double *x,double *f,int DIM)
 {
     f[0] = 0.0;
@@ -293,4 +259,21 @@ void POWELL_OBJECTIVE_VALUE(double *x,double *f,int DIM)
     f[0] =  sum1;
 }
 
+void Trid_OBJECTIVE_VALUE(double *x,double *f,int DIM)
+{
+    f[0] = 0.0;
+    double sum1 = 0.0;
+    double sum2 = 0.0;
+    for(int i=0;i<DIM;i++)
+    {
+        sum1 += pow( (x[i]-1) ,2);
 
+    }
+
+     for(int i=1;i<DIM;i++)
+    {
+        sum2 += x[i]*x[i-1];
+
+    }
+    f[0] = sum1 - sum2;
+}
