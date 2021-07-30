@@ -2,11 +2,11 @@ Some of Optimization Test Problems
 
 This file provide several Optimization Test Problems written in C.
 
-1. Ackley (-40~40)
+1. Ackley (-32.768~32.768)
 2. Rastrigin (-5.12~5.12)
 3. Rosenbrock (-5~10)
-4. Sphere (0~PI)
-5. Michalewicz (-5.12~5.12)
+4. Sphere (-5.12~5.12)
+5. Michalewicz (0~\pi)
 6. BentCigar (-100~100)
 7. Schaffer F7 (-100~100)
 8. Zakharov (-100~100)
@@ -14,7 +14,7 @@ This file provide several Optimization Test Problems written in C.
 10. Schwefel (-500~500)
 11. Sum Squares (-10~10)
 12. Powell (-4~5)
-13. Trid (-200~200)
+13. Trid (-d<sup>2</sup>~d<sup>2</sup>)
 
 In order to call the 'TestingFunction.h' function in C++ , first you need to import it 
 ```cpp
