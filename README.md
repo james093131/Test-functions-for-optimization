@@ -6,7 +6,7 @@ This file provide several Optimization Test Problems written in C.
 2. Rastrigin (-5.12~5.12)
 3. Rosenbrock (-5~10)
 4. Sphere (-5.12~5.12)
-5. Michalewicz (0~\pi)
+5. Michalewicz (0~ \pi )
 6. BentCigar (-100~100)
 7. Schaffer F7 (-100~100)
 8. Zakharov (-100~100)
