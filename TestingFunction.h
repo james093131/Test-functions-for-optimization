@@ -3,6 +3,7 @@
 #include <sstream>
 #include <stdlib.h>
 #include <math.h>
+#define PI 3.1415926535897932384626433832795029
 
 void ACKLEY_OBJECTIVE_VALUE(double *x, double *f, int DIM);      //Ackley  -32.768~32.768
 void RASTRIGIN_OBJECTIVE_VALUE(double *x, double *f, int DIM);   //Rastrigin -5.12~5.12
@@ -18,6 +19,64 @@ void SUM_SQUARES_OBJECTIVE_VALUE(double *x, double *f, int DIM); //Sum Squares -
 void POWELL_OBJECTIVE_VALUE(double *x, double *f, int DIM);      //Powell -4~5
 void Trid_OBJECTIVE_VALUE(double *x, double *f, int DIM);        //Trid -d^2~d^2
 
+void Set_Range(double &max, double &min, int func_num, int dim)
+{
+    switch (func_num)
+    {
+    case 1:
+        max = 32.768;
+        min = -32.768;
+        break;
+    case 2:
+        max = 5.12;
+        min = -5.12;
+        break;
+    case 3:
+        max = 10.0;
+        min = -5.0;
+        break;
+    case 4:
+        max = 5.12;
+        min = -5.12;
+        break;
+    case 5:
+        max = PI;
+        min = 0;
+        break;
+    case 6:
+        max = 100.0;
+        min = -100.0;
+        break;
+    case 7:
+        max = 100.0;
+        min = -100.0;
+        break;
+    case 8:
+        max = 100.0;
+        min = -100.0;
+        break;
+    case 9:
+        max = 600.0;
+        min = -600.0;
+        break;
+    case 10:
+        max = 500.0;
+        min = -500.0;
+        break;
+    case 11:
+        max = 10.0;
+        min = -10.0;
+        break;
+    case 12:
+        max = 5.0;
+        min = -4.0;
+        break;
+    case 13:
+        max = pow(dim, 2);
+        min = -pow(dim, 2);
+        break;
+    }
+}
 void Testing_Function(double *x, double *f, int DIM, int N, int func_num)
 {
     for (int i = 0; i < N; i++)
